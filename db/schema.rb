@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_14_062634) do
+ActiveRecord::Schema.define(version: 2022_01_14_090925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2022_01_14_062634) do
     t.string "address"
     t.decimal "price"
     t.string "phone"
+    t.string "name", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -50,6 +51,10 @@ ActiveRecord::Schema.define(version: 2022_01_14_062634) do
     t.string "city"
     t.string "country"
     t.string "phone"
+    t.string "username", limit: 30, null: false
+    t.string "email", limit: 50
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "reservations", "restaurants"
