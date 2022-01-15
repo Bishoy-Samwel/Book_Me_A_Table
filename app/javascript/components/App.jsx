@@ -8,8 +8,8 @@ import {
 } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
+import configureStore from 'redux/configureStore';
 import Message from './message';
-import configureStore from '../configureStore';
 
 const store = configureStore();
 

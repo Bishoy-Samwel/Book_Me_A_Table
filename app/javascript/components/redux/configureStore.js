@@ -4,7 +4,7 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { elementsReducer } from './elementsReducer';
+import { elementsReducer } from './elements';
 
 const rootReducer = combineReducers({
   elements: elementsReducer,
