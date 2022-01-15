@@ -6,7 +6,7 @@ export default function Message(props) {
   // eslint-disable-next-line react/prop-types
   const { msg } = props;
   const dispatch = useDispatch();
-  const message = useSelector((state) => state.msg);
+  const message = useSelector((state) => state.elements.msg);
   return (
     <div>
       <h2>

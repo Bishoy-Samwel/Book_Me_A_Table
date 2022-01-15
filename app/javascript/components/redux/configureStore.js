@@ -11,9 +11,8 @@ const rootReducer = combineReducers({
   // additional reducers could be added here
 });
 
-const store = createStore(
+// eslint-disable-next-line import/prefer-default-export
+export const store = () => createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk, logger)),
 );
-
-export default store;
