@@ -8,9 +8,7 @@ const LOAD_ELEMENTS_FAILURE = 'LOAD_ROCKETS_FAILURE';
 // Initial Data and InitialState
 const initialState = {
   msg: { title: 'Hello', body: 'English Message' },
-  elementsIsLoading: false,
-  detailsIsLoading: false,
-  filter: '',
+  isLoading: false,
   data: [],
 };
 // Reducer
@@ -22,30 +20,27 @@ export const elementsReducer = (state = initialState, action) => {
     case LOAD_ELEMENTS_SUCCESS: {
       const { elements } = payload;
       return {
-        ...state, elementsIsLoading: false, data: elements,
+        ...state, isLoading: false, data: elements,
       };
     }
     case LOAD_ELEMENTS_IN_PROGRESS:
       return {
-        ...state, elementsIsLoading: true,
+        ...state, isLoading: true,
       };
     case LOAD_ELEMENTS_FAILURE:
       return {
         ...state,
-        elementsIsLoading: false,
+        isLoading: false,
       };
     default:
       return state;
   }
 };
 // Action Creators
-export const getRandomMsgSuccess = (json) => {
-  console.log('GetRandomMsg() Action');
-  return {
-    type: GET_RANDOM_MSG_SUCCSESS,
-    json,
-  };
-};
+export const getRandomMsgSuccess = (json) => ({
+  type: GET_RANDOM_MSG_SUCCSESS,
+  json,
+});
 
 const loadElementsInProgress = () => ({ type: LOAD_ELEMENTS_IN_PROGRESS });
 
@@ -68,7 +63,6 @@ export const loadElements = () => (
       dispatch(loadElementsInProgress());
       const response = await fetch('api/v1/restaurants');
       const elements = await response.json();
-      console.log(elements);
       dispatch(loadElementsSuccess(elements));
     } catch (e) {
       dispatch(loadElementsFailure());
