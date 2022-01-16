@@ -8,14 +8,14 @@ import {
 } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
+import { store } from './redux/configureStore';
 import Message from './message';
-import configureStore from '../configureStore';
 
-const store = configureStore();
+const storeConfig = store();
 
 export default function App() {
   return (
-    <Provider store={store}>
+    <Provider store={storeConfig}>
       <Router>
         <div>
           <nav>
