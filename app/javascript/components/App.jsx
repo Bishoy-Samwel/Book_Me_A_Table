@@ -36,7 +36,6 @@ export default function App() {
 
         </div>
         <Routes>
-          <Route path="/" element={<Home />} />
           <Route path="/randomMessage" element={<Message msg="hi" />} />
           <Route path="/restaurants" element={<Elements />} />
           <Route path="/details/:itemId" element={<ElementDetails />} />
@@ -46,9 +45,6 @@ export default function App() {
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
 
 ReactDOM.render(
   <App />,
