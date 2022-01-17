@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getElements } from '../selectors';
 import { loadElements } from '../redux/elements';
+import Element from './Element';
 
 const Elements = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ const Elements = () => {
   return (
     <div>
       {
-        elements.map((element) => <h1 key={element.id}>{element.name}</h1>)
+        elements.map((element) => <Element key={element.id} element={element} />)
       }
     </div>
   );
