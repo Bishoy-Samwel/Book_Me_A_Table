@@ -10,6 +10,8 @@ import {
 import { Provider } from 'react-redux';
 import { store } from './redux/configureStore';
 import Message from './message';
+import Elements from './Elements/Elements';
+import ElementDetails from './ElementDetails/Details';
 
 const storeConfig = store();
 
@@ -26,14 +28,19 @@ export default function App() {
               <li>
                 <Link to="/randomMessage">Random Message</Link>
               </li>
+              <li>
+                <Link to="/restaurants">Restaurants </Link>
+              </li>
             </ul>
           </nav>
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/randomMessage" element={<Message msg="hi" />} />
-          </Routes>
         </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/randomMessage" element={<Message msg="hi" />} />
+          <Route path="/restaurants" element={<Elements />} />
+          <Route path="/details/:itemId" element={<ElementDetails />} />
+        </Routes>
       </Router>
     </Provider>
   );
