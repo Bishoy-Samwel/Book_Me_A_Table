@@ -8,8 +8,9 @@ import {
 } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
-import Message from './message.jsx';
 import configureStore from '../configureStore.js';
+import Navbar from './navbar.jsx';
+import Reservations from './reservations.jsx';
 
 const store = configureStore();
 
@@ -18,29 +19,16 @@ export default function App() {
     <Provider store={store}>
       <Router>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/randomMessage">Random Message</Link>
-              </li>
-            </ul>
-          </nav>
-
+          
+          <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/randomMessage" element={<Message msg="hi" />} />
+            <Route path="/" element={<Reserve />} />
+            <Route path="/randomMessage" element={<Reservations />} />
           </Routes>
         </div>
       </Router>
     </Provider>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
 }
 
 ReactDOM.render(
