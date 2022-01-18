@@ -1,0 +1,2 @@
+2022-01-12 09:37:35.085 GMT [57964] FATAL:  database files are incompatible with server
+2022-01-12 09:37:35.085 GMT [57964] DETAIL:  The data directory was initialized by PostgreSQL version 9.5, which is not compatible with this version 14.1.
