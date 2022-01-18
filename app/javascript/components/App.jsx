@@ -3,7 +3,6 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
   Routes,
 } from 'react-router-dom';
 
@@ -12,6 +11,10 @@ import { store } from './redux/configureStore';
 import Message from './message';
 import Elements from './Elements/Elements';
 import ElementDetails from './ElementDetails/Details';
+// import { loggedIn } from './redux/authentication';
+import { Container } from './Container';
+import { LogIn } from './Pages/LogIn';
+import { SignUp } from './Pages/SignUp';
 
 const storeConfig = store();
 
@@ -19,32 +22,19 @@ export default function App() {
   return (
     <Provider store={storeConfig}>
       <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/randomMessage">Random Message</Link>
-              </li>
-              <li>
-                <Link to="/restaurants">Restaurants </Link>
-              </li>
-            </ul>
-          </nav>
-
-        </div>
+        <Container />
         <Routes>
           <Route path="/randomMessage" element={<Message msg="hi" />} />
           <Route path="/restaurants" element={<Elements />} />
           <Route path="/details/:itemId" element={<ElementDetails />} />
+          <Route path="/logIn" element={<LogIn />} />
+          <Route path="/signUp" element={<SignUp />} />
+
         </Routes>
       </Router>
     </Provider>
   );
 }
-
 
 ReactDOM.render(
   <App />,
