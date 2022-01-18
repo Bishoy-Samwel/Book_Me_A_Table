@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom';
-import React from 'react';
+import React, {useState} from 'react';
 import {
   BrowserRouter as Router,
   Route,
@@ -8,46 +8,41 @@ import {
 } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
-import { store } from './redux/configureStore';
-import Message from './message';
-import Elements from './Elements/Elements';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './navbar.jsx';
+import Reservations from './reservations.jsx';
+import Restaurants from './restaurants.jsx';
+import './navbar.css';
+import './App.css';
 import ElementDetails from './ElementDetails/Details';
-
+import Elements from './Elements/Elements';
+import { store } from './redux/configureStore';
 const storeConfig = store();
 
 export default function App() {
+   // menuCollapse state using useState hook
+   const [menuCollapse, setMenuCollapse] = useState(false)
+   // custom function that will change menucollapse state from false to true and true to false
+   const menuIconClick = () => {
+       // condition checking to change state from true to false and vice versa
+       menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
+   };
   return (
     <Provider store={storeConfig}>
       <Router>
-        <div>
-          <nav>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/randomMessage">Random Message</Link>
-              </li>
-              <li>
-                <Link to="/restaurants">Restaurants </Link>
-              </li>
-            </ul>
-          </nav>
-
-        </div>
+          
+          <Navbar menuCollapse={menuCollapse} menuIconClick={menuIconClick} />
+          <div className={menuCollapse ? 'ml-2' : 'ml-5'} > 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/randomMessage" element={<Message msg="hi" />} />
+          <Route path="/" element={<Restaurants />} />
+          <Route path="/myReservations" element={<Reservations />} />
           <Route path="/restaurants" element={<Elements />} />
           <Route path="/details/:itemId" element={<ElementDetails />} />
         </Routes>
+        </div>
       </Router>
     </Provider>
   );
-}
-
-function Home() {
-  return <h2>Home</h2>;
 }
 
 ReactDOM.render(
