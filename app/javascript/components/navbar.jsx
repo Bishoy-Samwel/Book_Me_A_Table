@@ -1,51 +1,79 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
-// import { Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+//react pro sidebar components
+import {
+    ProSidebar,
+    Menu,
+    MenuItem,
+    SidebarHeader,
+    SidebarFooter,
+    SidebarContent,
+} from "react-pro-sidebar";
+//icons from react icons
+import { FaList, FaRegHeart } from "react-icons/fa";
+import { FiHome, FiLogOut, FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
+import { RiPencilLine } from "react-icons/ri";
+import { BiCog } from "react-icons/bi";
+import { SiApacheairflow } from "react-icons/si";
+import { GiAbstract050 } from "react-icons/gi";
+//sidebar css from react-pro-sidebar module
+import "react-pro-sidebar/dist/css/styles.css";
+import { Link } from "react-router-dom";
 
-export default function Navbar() {
+const Navbar = ({menuCollapse, menuIconClick}) => {
+   
     return (
+        <>
+            <div id="header">
+                {/* collapsed props to change menu size using menucollapse state */}
 
-        // <div>
-        // <Navbar bg="light" expand="lg" className="flex-column">
-        // <Nav.Link as={Link} to="/#">Restaurants</Nav.Link>
-        // <Nav.Link as={Link} to="/">Reservations</Nav.Link>
-        // <Nav.Link as={Link} to="/myReservations">My Reservations</Nav.Link>
-        // </Navbar>
-        // </div>
-        <div>
-            <div className="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column" id="sidebar">
-                <ul className="nav flex-column text-white w-100">
-                    <a href="#" className="nav-link h3 text-white my-2">
-                        Logo
-                    </a>
-                    <li href="#" className="nav-link">
-                        <Link to="/">
-                            <i className="bx bxs-dashboard" />
-                            <span className="mx-2">Restaurants</span>
-                        </Link>
-                    </li>
-                    <li href="#" className="nav-link">
-                        <Link to="/#">
-                            <i className="bx bx-user-check" />
-                            <span className="mx-2">Reserve</span>
-                        </Link>
+                <ProSidebar collapsed={menuCollapse}>
+                    <SidebarHeader>
+                        <div className="logotext">
+                            {/* Icon change using menucollapse state */}
+                            <p>{menuCollapse ? <GiAbstract050 /> : <SiApacheairflow />}</p>
+                        </div>
+                        <div className="closemenu" onClick={menuIconClick}>
+                            {/* changing menu collapse icon on click */}
+                            {menuCollapse ? (
+                                <FiArrowRightCircle />
+                            ) : (
+                                <FiArrowLeftCircle />
+                            )}
+                        </div>
+                    </SidebarHeader>
+                    <SidebarContent>
+                        <Menu iconShape="square">
+                            <MenuItem active={true} icon={<FiHome />}>
+                                    Restaurant
+                                <Link to="/"/>
+                                
+                            </MenuItem>
+                            <MenuItem icon={<FaRegHeart />}>
+                                <Link to="/" />
+                                    Reserve
+                            </MenuItem>
 
-                    </li>
-                    <li href="#" className="nav-link">
-                        <Link to="/myReservations">
-                            <i className="bx bx-conversation" />
-                            <span className="mx-2">My Reservations</span>
-                        </Link>
-                    </li>
-                </ul>
-                {/* <span href='' className="nav-link h4 w-100 mb-5">
-<a href><i className="bx bxl-instagram-alt text-white" /></a>
-<a href><i className="bx bxl-twitter px-2 text-white" /></a>
-<a href><i className="bx bxl-facebook text-white" /></a>
-</span> */}
+
+                            <MenuItem icon={<RiPencilLine />}>
+                                    My Reservations
+                                <Link to="/myReservations" />
+                               
+                            </MenuItem>
+                            {/* 
+
+                            <Link to="/#">
+                                <MenuItem icon={<BiCog />}>Settings</MenuItem>
+                            </Link> */}
+                        </Menu>
+                    </SidebarContent>
+                    <SidebarFooter>
+                        <Menu iconShape="square">
+                            <MenuItem icon={<FiLogOut />}>Logout</MenuItem>
+                        </Menu>
+                    </SidebarFooter>
+                </ProSidebar>
             </div>
-            {/* Main Wrapper */}
-        </div>
+        </>
     );
 }
+export default Navbar
