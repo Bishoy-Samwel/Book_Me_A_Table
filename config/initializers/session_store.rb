@@ -1,0 +1,1 @@
+Rails.application.config.session_store :cookie_store, :key => '_Book_A_Table'

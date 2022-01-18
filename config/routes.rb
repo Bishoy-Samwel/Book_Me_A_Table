@@ -5,10 +5,16 @@ Rails.application.routes.draw do
     !req.xhr? && req.format.html?
   end
 
-  namespace :api do
+  namespace :api, defaults: { format: :json }  do
     namespace :v1 do
-      resources :messages, only: %i[index]
       get 'randomMessage', to: 'messages#random_message'
+      resources :restaurants, only: [:index, :show, :create, :destroy]
+      resources :users, only: [:create] do
+        resources :reservations, only: [:index, :create, :destroy]
+      end
+      resources :sessions, only: [:create]
+      get 'logged_in', to: 'sessions#logged_in'
+      delete 'logout', to: 'sessions#logout'
     end
   end
 end
