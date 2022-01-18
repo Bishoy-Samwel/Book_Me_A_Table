@@ -8,15 +8,14 @@ import {
 } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
-import configureStore from '../configureStore.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './navbar.jsx';
 import Reservations from './reservations.jsx';
 import Restaurants from './restaurants.jsx';
 import './navbar.css';
 import './App.css';
-
-const store = configureStore();
+import ElementDetails from './ElementDetails/Details';
+const storeConfig = store();
 
 export default function App() {
    //menuCollapse state using useState hook
@@ -27,16 +26,18 @@ export default function App() {
        menuCollapse ? setMenuCollapse(false) : setMenuCollapse(true);
    };
   return (
-    <Provider store={store}>
+    <Provider store={storeConfig}>
       <Router>
-          
           <Navbar menuCollapse={menuCollapse} menuIconClick={menuIconClick} />
-          <div className={menuCollapse ? 'ml-2' : 'ml-5'}>
-          <Routes>
-            <Route path="/" element={<Restaurants />} />
-            <Route path="/myReservations" element={<Reservations />} />
-          </Routes>
-        </div>
+          <div className={menuCollapse ? 'ml-2' : 'ml-5'} /> 
+        <Routes>
+          <Route path="/" element={<Restaurants />} />
+          <Route path="/myReservations" element={<Reservations />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/randomMessage" element={<Message msg="hi" />} />
+          <Route path="/restaurants" element={<Elements />} />
+          <Route path="/details/:itemId" element={<ElementDetails />} />
+        </Routes>
       </Router>
     </Provider>
   );
