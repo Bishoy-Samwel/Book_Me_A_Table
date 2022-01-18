@@ -5,10 +5,11 @@ import logger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import { elementsReducer } from './elements';
+import { authenticationReducer } from './auth';
 
 const rootReducer = combineReducers({
   elements: elementsReducer,
-  // additional reducers could be added here
+  auth: authenticationReducer,
 });
 
 // eslint-disable-next-line import/prefer-default-export
