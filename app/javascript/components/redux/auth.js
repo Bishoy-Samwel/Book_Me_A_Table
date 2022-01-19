@@ -7,7 +7,7 @@ const LOG_OUT = 'LOG_OUT';
 
 // Initial State
 const initialState = {
-  user: null,
+  user: {},
   isLoading: false,
 };
 
@@ -31,10 +31,11 @@ export const authenticationReducer = (state = initialState, action) => {
         isLoading: false,
       };
     case LOG_OUT:
+      console.log('Hey');
       localStorage.removeItem('token');
       return {
         ...state,
-        use: {},
+        user: {},
       };
     default:
       return state;
