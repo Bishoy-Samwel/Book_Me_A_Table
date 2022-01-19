@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
-import { store } from './redux/configureStore';
+import { configureStore } from './redux/configureStore';
 import Message from './message';
 import Elements from './Elements/Elements';
 import ElementDetails from './ElementDetails/Details';
@@ -16,13 +16,13 @@ import { Container } from './Container';
 import { LogIn } from './Pages/LogIn';
 import { SignUp } from './Pages/SignUp';
 
-const storeConfig = store();
+const store = configureStore();
 
 export default function App() {
   return (
-    <Provider store={storeConfig}>
+    <Provider store={store}>
       <Router>
-        <Container />
+        <Container store={store} />
         <Routes>
           <Route path="/randomMessage" element={<Message msg="hi" />} />
           <Route path="/restaurants" element={<Elements />} />
