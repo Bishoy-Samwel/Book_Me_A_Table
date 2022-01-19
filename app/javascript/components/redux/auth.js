@@ -8,7 +8,7 @@ const LOG_OUT = 'LOG_OUT';
 // Initial State
 const initialState = {
   user: null,
-  isLoading: {},
+  isLoading: false,
 };
 
 // Reducer
@@ -17,9 +17,8 @@ export const authenticationReducer = (state = initialState, action) => {
   switch (type) {
     case SET_USER_SUCCESS: {
       const { user } = payload;
-      console.log(user);
       return {
-        ...state, user,
+        ...state, user, isLoading: false,
       };
     }
     case SET_USER_IN_PROGRESS:
@@ -27,7 +26,6 @@ export const authenticationReducer = (state = initialState, action) => {
         ...state, isLoading: true,
       };
     case SET_USER_FAILURE:
-      console.log('hi ff');
       return {
         ...state,
         isLoading: false,
@@ -82,6 +80,7 @@ export const login = (userInput) => (
 export const loggedIn = () => (
   async (dispatch) => {
     try {
+      dispatch(setUserInProgress());
       if (localStorage.getItem('token')) {
         const response = await fetch('api/v1/login', { headers: { Authenticate: localStorage.token } });
         const user = await response.json();
