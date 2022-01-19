@@ -8,3 +8,5 @@ export const getElementById = (id) => createSelector(
     (element) => element.id === id,
   )[0],
 );
+
+export const currentUser = (state) => state.auth.user;

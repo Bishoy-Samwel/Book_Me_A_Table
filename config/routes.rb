@@ -8,13 +8,13 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json }  do
     namespace :v1 do
       get 'randomMessage', to: 'messages#random_message'
+      post '/login', to: 'users#login'
+      get '/login', to: 'users#token_authenticate'
       resources :restaurants, only: [:index, :show, :create, :destroy]
       resources :users, only: [:create] do
         resources :reservations, only: [:index, :create, :destroy]
       end
       resources :sessions, only: [:create]
-      get 'logged_in', to: 'sessions#logged_in'
-      delete 'logout', to: 'sessions#logout'
     end
   end
 end
