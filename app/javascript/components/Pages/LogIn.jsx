@@ -36,13 +36,8 @@ export const LogIn = () => {
   );
   return (
     <>
-      <div className="app">
-        <div className="login-form">
-          <div className="title">Sign In</div>
-          {renderForm}
-          {(user) ? <h1>The user logged in</h1> : true}
-        </div>
-      </div>
+      <div className="title">Sign In</div>
+      {(user) ? <h1>The user logged in</h1> : renderForm}
       <span>Dont have an account? </span>
       <Link to="/signUp">SignUp</Link>
     </>
