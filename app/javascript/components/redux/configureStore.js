@@ -13,7 +13,7 @@ const rootReducer = combineReducers({
 });
 
 // eslint-disable-next-line import/prefer-default-export
-export const store = () => createStore(
+export const configureStore = () => createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk, logger)),
 );
