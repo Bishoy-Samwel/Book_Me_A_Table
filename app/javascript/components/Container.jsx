@@ -19,9 +19,6 @@ export const Container = () => {
             <Link to="/restaurants">Home</Link>
           </li>
           <li>
-            <Link to="/randomMessage">Random Message</Link>
-          </li>
-          <li>
             <Link to="/signUp">SignUp</Link>
           </li>
           <li>

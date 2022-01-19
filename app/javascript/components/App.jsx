@@ -36,17 +36,17 @@ export default function App() {
     <Provider store={store}>
       <Router>
         <Container store={store} />
-        <Routes>
-          <Navbar menuCollapse={menuCollapse} menuIconClick={menuIconClick} />
-          <div className={menuCollapse ? 'ml-2' : 'ml-5'}>
+        <Navbar menuCollapse={menuCollapse} menuIconClick={menuIconClick} />
+        <div className={menuCollapse ? 'ml-2' : 'ml-5'}>
+          <Routes>
             <Route path="/" element={<Restaurants />} />
             <Route path="/myReservations" element={<Reservations />} />
             <Route path="/restaurants" element={<Elements />} />
             <Route path="/details/:itemId" element={<ElementDetails />} />
             <Route path="/logIn" element={<LogIn />} />
             <Route path="/signUp" element={<SignUp />} />
-          </div>
-        </Routes>
+          </Routes>
+        </div>
       </Router>
     </Provider>
   );
