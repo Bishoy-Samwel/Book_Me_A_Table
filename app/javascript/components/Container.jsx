@@ -1,5 +1,6 @@
+/* eslint-disable arrow-body-style */
 /* eslint-disable import/prefer-default-export */
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { loggedIn } from './redux/auth';
@@ -7,7 +8,7 @@ import { loggedIn } from './redux/auth';
 export const Container = () => {
   const dispatch = useDispatch();
 
-  useEffect(dispatch(loggedIn), []);
+  dispatch(loggedIn);
   return (
     <div>
       <nav>
