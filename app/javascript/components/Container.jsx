@@ -2,31 +2,39 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable arrow-body-style */
 /* eslint-disable import/prefer-default-export */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './navbar';
 import { loggedIn } from './redux/auth';
+import ElementDetails from './ElementDetails/Details';
+import Elements from './Elements/Elements';
+import Reservations from './Pages/reservations';
+import { LogIn } from './Pages/LogIn';
+import { SignUp } from './Pages/SignUp';
+import 'react-pro-sidebar/dist/css/styles.css';
+import './Container.css';
 
 export const Container = () => {
   const dispatch = useDispatch();
-  // props.store.dispatch(loggedIn);
   useEffect(() => { dispatch(loggedIn()); }, [dispatch]);
+  const [menuCollapse, setMenuCollapse] = useState(false);
+  const menuIconClick = () => {
+    (menuCollapse) ? setMenuCollapse(false) : setMenuCollapse(true);
+  };
   return (
     <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/restaurants">Home</Link>
-          </li>
-          <li>
-            <Link to="/signUp">SignUp</Link>
-          </li>
-          <li>
-            <Link to="/logIn">logIn</Link>
-          </li>
-        </ul>
-      </nav>
-
+      <Navbar menuCollapse={menuCollapse} menuIconClick={menuIconClick} />
+      <div className={menuCollapse ? 'ml-2' : 'ml-5'} id="container">
+        <Routes>
+          <Route path="/" element={<Elements />} />
+          <Route path="/restaurants" element={<Elements />} />
+          <Route path="/myReservations" element={<Reservations />} />
+          <Route path="/details/:itemId" element={<ElementDetails />} />
+          <Route path="/logIn" element={<LogIn />} />
+          <Route path="/signUp" element={<SignUp />} />
+        </Routes>
+      </div>
     </div>
   );
 };
