@@ -17,7 +17,7 @@ const Elements = () => {
           <NavLink to={`/details/${element.id}`} exact>
             <img
               className="d-block w-100"
-              src="https://media-cdn.tripadvisor.com/media/photo-s/1a/b8/46/6d/london-stock.jpg"
+              src={element.img_url}
               alt="First slide"
             />
             <Carousel.Caption>
