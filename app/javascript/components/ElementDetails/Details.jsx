@@ -5,14 +5,16 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 // import { PropTypes } from 'prop-types';
 import React from 'react';
-import { getElementById, isLoading } from '../selectors';
+import { getElementById } from '../selectors';
 import './Details.css';
 
 const Details = () => {
   const itemId = Number(useParams().itemId);
   const element = useSelector(getElementById(itemId));
-  const {country, city, address, price, phone} = element;
-  console.log(itemId, element);
+  const {
+    country, city, address, price, phone,
+  } = element;
+
   // const detailsLoading = useSelector(isLoading);
 
   // if (!detailsLoading && element.elemData) {
@@ -70,9 +72,4 @@ const Details = () => {
 
   );
 };
-
-// Element.propTypes = {
-//   element: PropTypes.shape.isRequired,
-// };
-
 export default Details;
