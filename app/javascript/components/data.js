@@ -1,4 +1,4 @@
-export const data = [
+const data = [
   {
     img: 'https://media-cdn.tripadvisor.com/media/photo-s/1a/b8/46/6d/london-stock.jpg',
     desc: 'whatever description',
@@ -36,3 +36,5 @@ export const data = [
     id: 6,
   },
 ];
+
+export default data;

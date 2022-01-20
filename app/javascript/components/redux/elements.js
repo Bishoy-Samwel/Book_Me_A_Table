@@ -54,7 +54,7 @@ export const getRandomMsg = () => (dispacth) => {
   return fetch('api/v1/randomMessage')
     .then((response) => response.json())
     .then((json) => dispacth(getRandomMsgSuccess(json)))
-    .catch((error) => console.log(error));
+    // .catch((error) => console.log(error));
 };
 
 export const loadElements = () => (
