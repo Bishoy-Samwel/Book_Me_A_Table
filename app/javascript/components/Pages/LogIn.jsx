@@ -2,7 +2,7 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable arrow-body-style */
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../redux/auth';
 import { currentUser } from '../selectors';
@@ -12,43 +12,42 @@ export const LogIn = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(login({ email, password }));
   };
 
-
-
   const renderForm = (
     <div>
       <form onSubmit={handleSubmit}>
-        <div>Sign In</div>
-        <div>
-          <label>Email </label>
-          <input type="text" required onChange={(e) => setEmail(e.target.value)} />
+        <div className="form-group">
+          <label htmlFor="email">Email address:</label>
+          <input type="email" className="form-control" placeholder="Enter email" id="email" required onChange={(e) => setEmail(e.target.value)} />
         </div>
-        <div>
-          <label>Password </label>
-          <input type="password" required onChange={(e) => setPassword(e.target.value)} />
+        <div className="form-group">
+          <label htmlFor="pwd">Password:</label>
+          <input type="password" className="form-control" placeholder="Enter password" id="pwd" required onChange={(e) => setPassword(e.target.value)} />
         </div>
-        <div>
-          <input type="submit" />
+        <div className="form-group form-check">
+          <label className="form-check-label">
+            <input className="form-check-input" type="checkbox" />
+            {' '}
+            Remember me
+          </label>
         </div>
-        <span>Dont have an account? </span>
-        <Link to="/signUp">SignUp</Link>
+        <button type="submit" className="btn btn-primary">Login</button>
       </form>
+      <span>Dont have an account? </span>
+      <Link to="/signUp">SignUp</Link>
+
     </div>
   );
   return (
     <>
       {(Object.keys(user).length !== 0)
-        ? (
-          <div>
-            <h1>The user logged in</h1>
-            <button type="button">Log Out</button>
-          </div>
-        )
+        ? navigate('/')
+
         : renderForm}
     </>
   );
