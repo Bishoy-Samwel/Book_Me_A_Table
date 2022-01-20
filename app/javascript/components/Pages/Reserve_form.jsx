@@ -29,6 +29,10 @@ export default function ReserveForm() {
           <label>Phone</label>
           <input type="text" className="form-control" placeholder="Phone number" id="pwd" required onChange={(e) => setPassword(e.target.value)} />
         </div>
+        <div className="form-group">
+          <label>Image</label>
+          <input type="text" className="form-control" placeholder="https://imageurl.com.jpg" id="pwd" required onChange={(e) => setPassword(e.target.value)} />
+        </div>
         <div>
           <button type="submit" className="btn btn-primary my-2">Add Restaurant</button>
         </div>
