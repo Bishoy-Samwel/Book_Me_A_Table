@@ -5,13 +5,16 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 // import { PropTypes } from 'prop-types';
 import React from 'react';
-import { getElementById, isLoading } from '../selectors';
+import { getElementById } from '../selectors';
 import './Details.css';
 
 const Details = () => {
   const itemId = Number(useParams().itemId);
-  console.log(itemId);
   const element = useSelector(getElementById(itemId));
+  const {
+    country, city, address, price, phone,
+  } = element;
+
   // const detailsLoading = useSelector(isLoading);
 
   // if (!detailsLoading && element.elemData) {
@@ -23,33 +26,43 @@ const Details = () => {
       <div className="fluid-container">
         <div className="row no-gutters">
           <div className="col-md">
+
             <div className="h-100 d-flex align-items-start">
-              <img src="https://via.placeholder.com/975x678" className="img-fluid" alt="menu" />
+              <img
+                className="img-fluid"
+                src={element.img_url}
+                alt="First slide"
+              />
             </div>
           </div>
 
           <div className="col-md">
-            <div className="menu-text flex-grow-1 py-4 px-5">
-              <h2 className="main-title text-left">Golf Ter</h2>
+            <div className="menu-text flex-grow-1 px-2">
+              <h2 className="main-title text-left">{element.name}</h2>
               <hr className="hr-style-left" />
               <div className="d-flex justify-content-between">
-                <p className=" text-uppercase font-weight-bold">GOlfy</p>
-                <p>$200.00</p>
+                <p className=" text-uppercase font-weight-bold">Country</p>
+                <p>{country}</p>
               </div>
 
               <div className="menu-content d-flex justify-content-between">
-                <p className="text-uppercase font-weight-bold">GOlfy</p>
-                <p> $200.00</p>
+                <p className="text-uppercase font-weight-bold">City</p>
+                <p>{city}</p>
               </div>
 
               <div className="menu-content d-flex justify-content-between">
-                <p className="text-uppercase font-weight-bold">GOlfy</p>
-                <p>$200.00</p>
+                <p className="text-uppercase font-weight-bold">Address</p>
+                <p>{address}</p>
               </div>
 
               <div className="menu-content d-flex justify-content-between">
-                <p className="text-uppercase font-weight-bold">Kimbap</p>
-                <p> $200.00</p>
+                <p className="text-uppercase font-weight-bold">Price</p>
+                <p>{price}</p>
+              </div>
+
+              <div className="menu-content d-flex justify-content-between">
+                <p className="text-uppercase font-weight-bold">Phone</p>
+                <p>{phone}</p>
               </div>
             </div>
           </div>
@@ -59,9 +72,4 @@ const Details = () => {
 
   );
 };
-
-// Element.propTypes = {
-//   element: PropTypes.shape.isRequired,
-// };
-
 export default Details;
