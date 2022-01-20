@@ -19,7 +19,6 @@ import {
 import { RiPencilLine } from 'react-icons/ri';
 import { BiCog } from 'react-icons/bi';
 import { SiApacheairflow } from 'react-icons/si';
-import { GiAbstract050 } from 'react-icons/gi';
 // sidebar css from react-pro-sidebar module
 import 'react-pro-sidebar/dist/css/styles.css';
 import { Link } from 'react-router-dom';
@@ -41,7 +40,16 @@ const Navbar = ({ menuCollapse, menuIconClick }) => {
           <SidebarHeader>
             <div className="logotext">
               {/* Icon change using menucollapse state */}
-              <p>{menuCollapse ? <GiAbstract050 /> : <SiApacheairflow />}</p>
+              <p className="text-primary pt-2 pl-2 text-center">
+                {!menuCollapse ? (
+                  <>
+                    <SiApacheairflow />
+                    {' '}
+                    Book A Table
+                  </>
+                ) : <SiApacheairflow />}
+
+              </p>
             </div>
             <div role="button" className="closemenu" onClick={menuIconClick}>
               {menuCollapse ? (
