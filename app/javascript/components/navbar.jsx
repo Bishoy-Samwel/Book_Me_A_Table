@@ -62,13 +62,13 @@ const Navbar = ({ menuCollapse, menuIconClick }) => {
           <SidebarContent>
             <Menu iconShape="square">
               <MenuItem active icon={<FiHome />}>
-                Restaurant
+                Restaurants
                 <Link to="/" />
 
               </MenuItem>
               <MenuItem icon={<FaRegHeart />}>
-                <Link to="/" />
-                Reserve
+                <Link to="/reserve" />
+                Add a Restaurant
               </MenuItem>
               <MenuItem icon={<RiPencilLine />}>
                 My Reservations
