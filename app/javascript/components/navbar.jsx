@@ -67,8 +67,8 @@ const Navbar = ({ menuCollapse, menuIconClick }) => {
 
               </MenuItem>
               <MenuItem icon={<FaRegHeart />}>
-                <Link to="/" />
-                Reserve
+                <Link to="/reserve" />
+                Add a Restaurant
               </MenuItem>
               <MenuItem icon={<RiPencilLine />}>
                 My Reservations
