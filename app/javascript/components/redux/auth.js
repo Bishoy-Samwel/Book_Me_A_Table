@@ -31,7 +31,7 @@ export const authenticationReducer = (state = initialState, action) => {
         isLoading: false,
       };
     case LOG_OUT:
-      console.log('Hey');
+      // console.log('Hey');
       localStorage.removeItem('token');
       return {
         ...state,

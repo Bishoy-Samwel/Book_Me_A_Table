@@ -20,9 +20,12 @@ import './navbar.css';
 import './App.css';
 import ElementDetails from './ElementDetails/Details';
 import Elements from './Elements/Elements';
+import Restaurant from './restaurant.jsx';
+import { store } from './redux/configureStore';
 import { configureStore } from './redux/configureStore';
 
 const store = configureStore();
+
 
 export default function App() {
   // menuCollapse state using useState hook
