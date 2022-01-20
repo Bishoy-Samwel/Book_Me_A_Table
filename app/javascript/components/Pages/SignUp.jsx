@@ -35,26 +35,26 @@ export const SignUp = () => {
     <>
       <div className="wrapper">
         <form onSubmit={handleSubmit}>
-          <fieldset>
-            <label>
+          <div className="form-group">
+            <label htmlFor="email">Username</label>
+            <input type="username" className="form-control" placeholder="Enter username" id="username" required name="username" onChange={handleChange} value={formData.username || ''} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email address:</label>
+            <input type="email" className="form-control" placeholder="Enter email" id="email" required name="email" onChange={handleChange} value={formData.email || ''} />
+          </div>
+          <div className="form-group">
+            <label htmlFor="pwd">Password:</label>
+            <input type="password" className="form-control" placeholder="Enter password" id="pwd" required name="password" onChange={handleChange} value={formData.password || ''} />
+          </div>
+          <div className="form-group form-check">
+            <label className="form-check-label">
+              <input className="form-check-input" type="checkbox" />
               {' '}
-              Username
-              <input required name="username" onChange={handleChange} value={formData.username || ''} />
+              Remember me
             </label>
-            <br />
-            <label>
-              {' '}
-              Email
-              <input required name="email" onChange={handleChange} value={formData.email || ''} />
-            </label>
-            <br />
-            <label>
-              {' '}
-              Password
-              <input required name="password" type="password" onChange={handleChange} value={formData.password || ''} />
-            </label>
-          </fieldset>
-          <button type="submit">Submit</button>
+          </div>
+          <button type="submit" className="btn btn-primary">Submit</button>
         </form>
       </div>
 

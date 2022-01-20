@@ -1,12 +1,12 @@
 /* eslint-disable arrow-body-style */
 /* eslint-disable no-use-before-define */
+import { Button } from 'react-bootstrap';
 /* eslint-disable no-undef */
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 // import { PropTypes } from 'prop-types';
 import React from 'react';
 import { getElementById } from '../selectors';
-import './Details.css';
 
 const Details = () => {
   const itemId = Number(useParams().itemId);
@@ -63,6 +63,9 @@ const Details = () => {
               <div className="menu-content d-flex justify-content-between">
                 <p className="text-uppercase font-weight-bold">Phone</p>
                 <p>{phone}</p>
+              </div>
+              <div>
+                <Button>Reserve</Button>
               </div>
             </div>
           </div>
