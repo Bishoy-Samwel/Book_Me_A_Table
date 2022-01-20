@@ -75,3 +75,6 @@ end
 
 gem 'bcrypt' 
 gem 'rack-cors'
+gem 'jwt'
+gem 'jsbundling-rails'
+gem 'cssbundling-rails'
