@@ -9,9 +9,11 @@ import Navbar from './navbar';
 import { loggedIn } from './redux/auth';
 import ElementDetails from './ElementDetails/Details';
 import Elements from './Elements/Elements';
-import Reservations from './reservations';
+import Reservations from './Pages/reservations';
 import { LogIn } from './Pages/LogIn';
 import { SignUp } from './Pages/SignUp';
+import 'react-pro-sidebar/dist/css/styles.css';
+import './Container.css';
 
 export const Container = () => {
   const dispatch = useDispatch();
@@ -23,7 +25,7 @@ export const Container = () => {
   return (
     <div>
       <Navbar menuCollapse={menuCollapse} menuIconClick={menuIconClick} />
-      <div className={menuCollapse ? 'ml-2' : 'ml-5'}>
+      <div className={menuCollapse ? 'ml-2' : 'ml-5'} id="container">
         <Routes>
           <Route path="/" element={<Elements />} />
           <Route path="/restaurants" element={<Elements />} />
