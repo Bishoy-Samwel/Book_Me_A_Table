@@ -37,15 +37,15 @@ export const SignUp = () => {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="email">Username</label>
-            <input type="username" className="form-control" placeholder="Enter username" id="username" required name="username" onChange={handleChange} value={formData.username || ''} />
+            <input type="username" className="form-control" placeholder="Enter username" id="username" required name="username" onChange={handleChange} />
           </div>
           <div className="form-group">
             <label htmlFor="email">Email address:</label>
-            <input type="email" className="form-control" placeholder="Enter email" id="email" required name="email" onChange={handleChange} value={formData.email || ''} />
+            <input type="email" className="form-control" placeholder="Enter email" id="email" required name="email" onChange={handleChange} />
           </div>
           <div className="form-group">
             <label htmlFor="pwd">Password:</label>
-            <input type="password" className="form-control" placeholder="Enter password" id="pwd" required name="password" onChange={handleChange} value={formData.password || ''} />
+            <input type="password" className="form-control" placeholder="Enter password" id="pwd" required name="password" onChange={handleChange} />
           </div>
           <div className="form-group form-check">
             <label className="form-check-label">
