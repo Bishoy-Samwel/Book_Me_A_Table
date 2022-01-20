@@ -4,7 +4,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { login, logOut } from '../redux/auth';
+import { login } from '../redux/auth';
 import { currentUser } from '../selectors';
 
 export const LogIn = () => {
@@ -18,10 +18,7 @@ export const LogIn = () => {
     dispatch(login({ email, password }));
   };
 
-  const handleLogout = () => {
-    console.log('Bye Bye');
-    dispatch(logOut());
-  };
+
 
   const renderForm = (
     <div>
@@ -49,7 +46,7 @@ export const LogIn = () => {
         ? (
           <div>
             <h1>The user logged in</h1>
-            <button type="button" onClick={handleLogout}>Log Out</button>
+            <button type="button">Log Out</button>
           </div>
         )
         : renderForm}
