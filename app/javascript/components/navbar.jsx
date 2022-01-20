@@ -62,7 +62,7 @@ const Navbar = ({ menuCollapse, menuIconClick }) => {
           <SidebarContent>
             <Menu iconShape="square">
               <MenuItem active icon={<FiHome />}>
-                Restaurant
+                Restaurants
                 <Link to="/" />
 
               </MenuItem>
