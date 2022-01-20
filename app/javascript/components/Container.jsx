@@ -14,6 +14,7 @@ import { LogIn } from './Pages/LogIn';
 import { SignUp } from './Pages/SignUp';
 import 'react-pro-sidebar/dist/css/styles.css';
 import './Container.css';
+import ReserveForm from './Pages/Reserve_form';
 
 export const Container = () => {
   const dispatch = useDispatch();
@@ -30,6 +31,7 @@ export const Container = () => {
           <Route path="/" element={<Elements />} />
           <Route path="/restaurants" element={<Elements />} />
           <Route path="/myReservations" element={<Reservations />} />
+          <Route path="/reserve" element={<ReserveForm />} />
           <Route path="/details/:itemId" element={<ElementDetails />} />
           <Route path="/logIn" element={<LogIn />} />
           <Route path="/signUp" element={<SignUp />} />
