@@ -54,8 +54,8 @@ It allows users to reserve a table, Add a restaurant and view multiple restauran
 
 - [Kanban Board](https://github.com/Bishoy-Samwel/Book_Me_A_Table/projects/1)
 
-- Initial Screenshot of Kanban Board
 
+- Initial Screenshot of Kanban Board
 ![kanban2](https://user-images.githubusercontent.com/22328716/148969183-41db07b4-638b-49a6-8b2f-b6663460b19a.png)
 
 - Two People built this project with Bishoy Samwel Faheem working on the Backend and Luqman Musah working on the frontend. 
