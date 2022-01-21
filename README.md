@@ -41,19 +41,14 @@ It allows users to reserve a table, Add a restaurant and view multiple restauran
   cd Book_Me_A_Table
   ```
 
-- On the comandline, at the project's root, run `npm install` to install app dependencies
+- On the comandline, at the project's root, run `yarn install` to install app dependencies
 
-- Next, run `npm start` which will run the app in the development mode.
+- Next, run `yarn run build` which will run the app in the development mode.
+
+- Next, run `./bin/dev` to run the server and react together.
 
 - Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- ALTERNATIVELY
-
-  - Just run `npm run build` which will build the project and generate output files into the `build` directory.
-
-  - Go to `build` directory and manually open `index.html` to interact with the app
-
-- Run `npm run test` to run tests.
 
 ## Contributing
 
