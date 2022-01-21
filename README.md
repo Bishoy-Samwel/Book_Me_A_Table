@@ -1,4 +1,5 @@
 # React-Rails
+Book-A-Table is a React-Rails appliation that allows users to authenticate, add restaurant and make reservations. This project was built with React-Rails.
 
 ## Table of Contents
 
@@ -15,27 +16,29 @@
 ## About Project
 
 This is practice project on working with Ruby on Rails and React together. 
-Showing a random message
+It allows users to reserve a table, Add a restaurant and view multiple restaurant available for booking.
 
-<!-- ![screenshot](./screenshot.png) -->
+![Screenshot 2022-01-21 at 7 44 54 AM](https://user-images.githubusercontent.com/22328716/150487194-5f7c0ad9-03ab-4b74-9248-1e6ebf008e96.png)
+
 
 ## Built With
 
 - ReactJS
 - Redux
+- Rails
 
 ## Getting Started
 
-- Clone this repo <https://github.com/Bishoy-Samwel/Rails-React-Intro>
+- Clone this repo <https://github.com/Bishoy-Samwel/Book_Me_A_Table>
 
   ```bash
-  git clone https://github.com/Bishoy-Samwel/Rails-React-Intro
+  git clone https://github.com/Bishoy-Samwel/Book_Me_A_Table
   ```
 
-- Navigate to Rails-React-Intro/directory
+- Navigate to Book_Me_A_Table directory
 
   ```bash
-  cd Rails-React-Intro
+  cd Book_Me_A_Table
   ```
 
 - On the comandline, at the project's root, run `npm install` to install app dependencies
@@ -52,18 +55,11 @@ Showing a random message
 
 - Run `npm run test` to run tests.
 
-## API Interactions
-
-From SpaceX API, this app/project is interacting/consuming the following endpoints:
-
-- **Base URL** - <http://localhost:3000>
-- **GET a greeting - Method(GET)** - <http://localhost:3000/api/v1/randomMessage.json>
-
 ## Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Bishoy-Samwel/Rails-React-Intro/issues)
+Feel free to check the [issues page](https://github.com/Bishoy-Samwel/Book_Me_A_Table/issues)
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/newFeature`)
@@ -78,10 +74,20 @@ Feel free to check the [issues page](https://github.com/Bishoy-Samwel/Rails-Reac
 - GitHub: [@Bishoy Samwel Faheem](https://github.com/Bishoy-Samwel)
 - LinkedIn: [Bishoy Samwel](https://www.linkedin.com/in/bishoy-samwuel-ss/)
 - Twitter: [@bisho](https://twitter.com/BishoFaheem15)
+
+
+👤 **Luqman Musah**
+
+- GitHub: [@luqmanmusah](https://github.com/luqmanmusah)
+- LinkedIn: [Luqman Musah](https://www.linkedin.com/in/luqman-musah/)
+- Twitter: [@luqboi1](https://twitter.com/luqboi1)
+
+
 ## Acknowledgements
 
 - [ReactJS Organization](https://reactjs.org/) for the amazing [Documentation](https://reactjs.org/docs/getting-started.html) on React.
 - [Redux Organization](https://redux.js.org/) for the amazing [Redux Essentials Tutorial](https://redux.js.org/tutorials/essentials/part-1-overview-concepts) on Redux.
+- Original design idea by [ Murat Korkmaz on Behance](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 
 ## Show your support
 
