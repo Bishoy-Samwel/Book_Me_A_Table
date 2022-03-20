@@ -1,5 +1,5 @@
 # React-Rails
-Book-A-Table is a React-Rails appliation that allows users to authenticate, add restaurant and make reservations. This project was built with React-Rails.
+Book-A-Table is a React-Rails application that allows users to authenticate, add restaurant and make reservations. This project was built with React-Rails.
 
 ## Table of Contents
 
