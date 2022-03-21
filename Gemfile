@@ -72,3 +72,9 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'bcrypt' 
+gem 'rack-cors'
+gem 'jwt'
+gem 'jsbundling-rails'
+gem 'cssbundling-rails'
